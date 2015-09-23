@@ -1,10 +1,10 @@
 'fileTypes': []
-'foldingStartMarker': '({%\\s*(block|filter|for|if|macro|raw))'
-'foldingStopMarker': '({%\\s*(endblock|endfilter|endfor|endif|endmacro|endraw)\\s*%})'
+'foldingStartMarker': '(<%\\s*(block|filter|for|if|macro|raw))'
+'foldingStopMarker': '(<%\\s*(endblock|endfilter|endfor|endif|endmacro|endraw)\\s*%>)'
 'name': 'Jinja Templates'
 'patterns': [
   {
-    'begin': '({%)\\s*(raw)\\s*(%})'
+    'begin': '(<%)\\s*(raw)\\s*(%>)'
     'captures':
       '1':
         'name': 'entity.other.jinja.delimiter.tag'
@@ -12,23 +12,23 @@
         'name': 'keyword.control.jinja'
       '3':
         'name': 'entity.other.jinja.delimiter.tag'
-    'end': '({%)\\s*(endraw)\\s*(%})'
+    'end': '(<%)\\s*(endraw)\\s*(%>)'
     'name': 'comment.block.jinja.raw'
   }
   {
-    'begin': '{#-?'
+    'begin': '<#-?'
     'captures':
       '0':
         'name': 'entity.other.jinja.delimiter.comment'
-    'end': '-?#}'
+    'end': '-?#>'
     'name': 'comment.block.jinja'
   }
   {
-    'begin': '{{-?'
+    'begin': '${-?'
     'captures':
       '0':
         'name': 'entity.other.jinja.delimiter.variable'
-    'end': '-?}}'
+    'end': '-?}'
     'name': 'meta.scope.jinja.variable'
     'patterns': [
       {
@@ -37,11 +37,11 @@
     ]
   }
   {
-    'begin': '{%-?'
+    'begin': '<%-?'
     'captures':
       '0':
         'name': 'entity.other.jinja.delimiter.tag'
-    'end': '-?%}'
+    'end': '-?%>'
     'name': 'meta.scope.jinja.tag'
     'patterns': [
       {
